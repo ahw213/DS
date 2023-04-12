@@ -54,3 +54,18 @@ class LinkedList:
             res += f" -> ({temp.data})"
         res += " -> null"
         print(res)
+
+    def insert_at(self, position, new_data):
+        if position <= 0:
+            print("Error: Position should be greater than 0")
+            return
+        elif position > self.num_of_data:
+            self.append(new_data)
+        else:
+            new_node = Node(new_data)
+            temp = self.head
+            for i in range(position-1):
+                temp = temp.next
+            new_node.next = temp.next
+            temp.next = new_node
+            self.num_of_data += 1
