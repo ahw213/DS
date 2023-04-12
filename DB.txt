@@ -69,3 +69,18 @@ class LinkedList:
             new_node.next = temp.next
             temp.next = new_node
             self.num_of_data += 1
+
+    def remove(self, key):
+        temp = self.head
+        count = 0
+        while temp is not None:
+            if temp.next is not None and temp.next.data == key:
+                temp.next = temp.next.next
+                self.num_of_data -= 1
+                count += 1
+            else:
+                temp = temp.next
+        if count == 0:
+            return False
+        else:
+            return True
