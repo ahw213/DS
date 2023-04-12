@@ -1,3 +1,5 @@
+#202102022 철학과 안혜원
+
 class Node:
     def __init__(self, data):
         self.data = data
